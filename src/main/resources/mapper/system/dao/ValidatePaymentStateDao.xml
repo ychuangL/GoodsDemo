@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nuite.modules.system.dao.ValidatePaymentStateDao">
+
+  <select id="selectIsRemove" resultType="int">
+      select isremove
+      from ProductLabelRelation
+      where rfidCord= #{rfidCord}
+  </select>
+
+  <select id="selectPaymentState" resultType="int">
+      SELECT paymentState
+      FROM  PaymentGoods
+      where rfidCord=#{rfidCord}
+  </select>
+</mapper>
